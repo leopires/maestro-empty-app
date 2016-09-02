@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mvcontainer>
+        <mlabel id="lblHelloWorld" text="Hello World em XML" fontWeight="bold"/>
+        <mlabel id="lblHelloNurse" text="$this->data->texto" fontWeight="bold"/>
+    </mvcontainer>
+
+</view>

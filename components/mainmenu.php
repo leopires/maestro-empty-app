@@ -1,12 +1,13 @@
 <?php
 
-class MainMenu extends MAccordion {
+class MainMenu extends MAccordion
+{
 
-    public function onCreate() {
+    public function onCreate()
+    {
         parent::onCreate();
-        $this->setId('emptyAppMainMenu');
-
-        $actions = Manager::getActions('empty_app');
+        $this->setId('helloWorldAppMainMenu');
+        $actions = Manager::getActions('hello-world-app');
         foreach ($actions as $i => $group) {
             $baseGroup = new MBaseGroup("menu{$i}", $group[0]);
             $baseGroup->setFieldSet(false);
@@ -18,7 +19,6 @@ class MainMenu extends MAccordion {
                 $array[] = array($j, $action[0], $action[1], 'root');
             }
             $tree->setItemsFromArray($array);
-
             $baseGroup->addControl($tree);
             $this->addControl($baseGroup);
         }

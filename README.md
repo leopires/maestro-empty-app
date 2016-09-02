@@ -1,2 +1,2 @@
-# maestro-empty-app
-Just a Maestro Framework empty App.
+# maestro-hello-world-app
+Just a Maestro Framework Hello World App!
