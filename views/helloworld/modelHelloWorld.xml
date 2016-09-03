@@ -2,7 +2,6 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <mvcontainer>
-        <mlabel id="lblMensagem" text="Hello World em XML!" fontWeight="bold"/>
+        <mlabel id="lblMensagem" text="$this->data->mensagem" fontWeight="bold"/>
     </mvcontainer>
-
 </view>

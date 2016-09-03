@@ -11,9 +11,9 @@ class PhpHelloWorld extends MContainer {
 
     private function newHelloWorldLabel() {
         $helloWorlLabel = new MLabel();
-        $helloWorlLabel->setId("lblHelloWorld");
+        $helloWorlLabel->setId("lblMensagem");
         $helloWorlLabel->setBold(true);
-        $helloWorlLabel->setText("Hello World in PHP.");
+        $helloWorlLabel->setText("Hello World em PHP!");
 
         return $helloWorlLabel;
     }

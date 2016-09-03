@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
-    <mactionpanel id="mainPanel" title="Hello World App" actions="hello-world-app.tiposHelloWorld" />
+    <mactionpanel id="mainPanel" title="Hello World App: Hello World" actions="hello-world-app.tiposHelloWorld" />
+    <mspacer height="10px"/>
+    <mactionpanel id="mainPanelOutros" title="Hello World App: Outros Exemplos" actions="hello-world-app.outrosHelloWorld" />
 </view>

@@ -1,5 +1,7 @@
 <?php
 
+include_once Manager::getConf("basePath") . "/models/World.php";
+
 class HelloWorldController extends MController {
 
     /**
@@ -12,11 +14,16 @@ class HelloWorldController extends MController {
     }
 
     public function xmlHelloWorld() {
-        $this->data->texto = "Hello... Nurse... XML";
         $this->render();
     }
 
     public function phpHelloWorld() {
+        $this->render();
+    }
+
+    public function modelHelloWorld() {
+        $world = new World();
+        $this->data->mensagem = $world->getHelloMessage();
         $this->render();
     }
 }

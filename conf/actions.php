@@ -7,6 +7,10 @@ return array(
             'hello-world-xml' => array('Hello World em XML', 'hello-world/helloWorld/xmlHelloWorld', 'iconHelloWorld', '', null, array()),
             'hello-world-php' => array('Hello World em PHP', 'hello-world/helloWorld/phpHelloWorld', 'iconHelloWorld', '', null, array()),
         )
+        ),
+        'outrosHelloWorld' => array('Outros Exemplos', '', '', '', null, array(
+            'hello-world-from-model' => array('Hello World de um Model', 'hello-world/helloWorld/modelHelloWorld', 'iconHelloWorld', '', null, array())
+        )
         )
     )
     )
