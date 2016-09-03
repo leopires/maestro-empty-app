@@ -11,6 +11,10 @@ return array(
         'outrosHelloWorld' => array('Outros Exemplos', '', '', '', null, array(
             'hello-world-from-model' => array('Hello World de um Model', 'hello-world/helloWorld/modelHelloWorld', 'iconHelloWorld', '', null, array())
         )
+        ),
+        'exercicios' => array('Exercicios', '', '', '', null, array(
+            'exercicio-um' => array('Exercício 01', 'hello-world/exercicios/exercicioUm', 'iconHelloWorld', '', null, array())
+        )
         )
     )
     )
