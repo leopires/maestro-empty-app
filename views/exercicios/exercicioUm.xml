@@ -2,8 +2,8 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <mvcontainer>
-        <!--
-            Apague isto e coloque seus elementos de View aqui.
-        -->
+        <mlabel id="lblNome" text="$this->data->nome" fontWeight="bold"/>
+        <mlabel id="lblSobrenome" text="$this->data->sobrenome" fontWeight="bold"/>
+        <mlabel id="lblNascimento" text="$this->data->nascimento" fontWeight="bold"/>
     </mvcontainer>
 </view>
