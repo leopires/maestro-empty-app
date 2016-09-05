@@ -1,6 +1,5 @@
 <?php
 
-
 class ExerciciosController extends MController
 {
     public function exercicioUm() {
