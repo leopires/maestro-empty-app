@@ -9,6 +9,11 @@ return array(
             'hello-world-from-model' => array('Hello World de um Model', 'hello-world/helloWorld/modelHelloWorld', 'iconHelloWorld', '', null, array())
         )
         ),
+        'camadaApresentacao' => array('Camada de Apresentação', '', '', '', null, array(
+            'apresentacao-view-php' => array('View de um arquivo PHP', 'hello-world/views/viewFromPHPFile', 'iconHelloWorld', '', null, array()),
+            'apresentacao-view-xml' => array('View de um arquivo XML', 'hello-world/views/viewFromXMLFile', 'iconHelloWorld', '', null, array()),
+        )
+        ),
         'exercicios' => array('Exercicios', '', '', '', null, array(
             'exercicio-um' => array('Exercício 01', 'hello-world/exercicios/exercicioUm', 'iconHelloWorld', '', null, array())
         )
