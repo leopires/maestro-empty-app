@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mvcontainer>
+        <!--
+            Coloque aqui os controles para exibição das informações do exercício.
+        -->
+    </mvcontainer>
+
+</view>
