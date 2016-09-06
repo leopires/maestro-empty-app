@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+
+    <mbox id="box1" caption="Dados Pessoais">
+        <mvcontainer>
+            <mtextlabel id="txtNome" label="Nome:" text="$this->data->nome" bold="true"/>
+            <mtextlabel id="txtSobrenome" label="Sobrenome:" text="$this->data->sobrenome" bold="true"/>
+            <mtextlabel id="txtNascimento" label="Nascimento:" text="$this->data->nascimento" bold="true"/>
+        </mvcontainer>
+    </mbox>
+
+</view>

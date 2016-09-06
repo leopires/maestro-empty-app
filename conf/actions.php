@@ -16,7 +16,8 @@ return array(
         )
         ),
         'exercicios' => array('Exercicios', '', '', '', null, array(
-            'exercicio-um' => array('Exercício 01', 'hello-world/exercicios/exercicioUm', 'iconHelloWorld', '', null, array())
+            'exercicio-um' => array('Exercício 01', 'hello-world/exercicios/exercicioUm', 'iconHelloWorld', '', null, array()),
+            'exercicio-dois' => array('Exercício 02', 'hello-world/exercicios/exercicioDois', 'icoHelloWorld', '', null, array())
         )
         ),
     )
