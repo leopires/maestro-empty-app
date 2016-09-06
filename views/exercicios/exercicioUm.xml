@@ -2,9 +2,8 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <mvcontainer>
-        <!--
-            Coloque aqui os controles para exibição das informações do exercício.
-        -->
+        <mlabel id="lblNome" text="$this->data->nome" fontWeight="bold"/>
+        <mlabel id="lblSobrenome" text="$this->data->sobrenome" fontWeight="bold"/>
+        <mlabel id="lblNascimento" text="$this->data->nascimento" fontWeight="bold"/>
     </mvcontainer>
-
 </view>
