@@ -1,4 +1,5 @@
 <?php
+namespace helloworld\models;
 
 class World {
 
