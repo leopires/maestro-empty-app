@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mbox id="box1" caption="Dados do Veículo">
+        <mvcontainer>
+            <mtextlabel id="txtlblMarca" label="Marca:" text="Ferrari" bold="true"/>
+            <mtextlabel id="txtlblModelo" label="Modelo:" text="360 Modela" bold="true"/>
+            <mtextlabel id="txtlblAno" label="Ano:" text="1999 / 2000" bold="true"/>
+        </mvcontainer>
+    </mbox>
+</view>
