@@ -3,5 +3,5 @@
 <view>
     <mactionpanel id="mainPanel" title="Hello World App: Hello World" actions="hello-world-app.tiposHelloWorld" />
     <mspacer height="10px"/>
-    <mactionpanel id="mainPanelOutros" title="Hello World App: Outros Exemplos" actions="hello-world-app.outrosHelloWorld" />
+    <mactionpanel id="mainPanelOutros" title="Hello World App: Camada Apresentação" actions="hello-world-app.camadaApresentacao" />
 </view>

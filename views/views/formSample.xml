@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mbox id="box1" caption="Exemplo de Formulário" close=">hello-world/main/main">
+        <mform id="formSample" title="Cadastro de Veículo">
+            <fields>
+                <mvcontainer>
+                    <mhcontainer>
+                        <mtextfield id="txtMarca" label="Marca" width="250px"/>
+                        <mtextfield id="txtModelo" label="Modelo" width="300px"/>
+                    </mhcontainer>
+                    <mtextfield id="txtAno" label="Ano" maxLength="4" width="50px"/>
+                </mvcontainer>
+            </fields>
+            <buttons>
+                <mbutton id="btnPost" text="Enviar" action="@hello-world/views/showSubmitedFormData"/>
+            </buttons>
+            <validators>
+                <mrequiredvalidator field="txtMarca" message="A marca não foi informada."/>
+                <mrequiredvalidator field="txtModelo" message="O modelo não foi informado."/>
+            </validators>
+        </mform>
+    </mbox>
+</view>

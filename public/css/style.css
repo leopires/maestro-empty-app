@@ -6,4 +6,16 @@
     background-image: url(../images/icons/32px/ico-hello-world.png);
 }
 
+.iconUI {
+    background-image: url(../images/icons/32px/ico-ui.png);
+}
+
+.iconBrowser {
+    background-image: url(../images/icons/32px/ico-browser.png);
+}
+
+.iconSettings {
+    background-image: url(../images/icons/32px/ico-settings.png);
+}
+
 
