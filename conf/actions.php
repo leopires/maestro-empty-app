@@ -15,6 +15,7 @@ return array(
             'apresentacao-formulario' => array('Exemplo de Formulário', 'views/formSample', 'iconUI', '', null, array()),
         )
         ),
+        'camadaModel' => array('Camada Model', '', '', '', null, array()),
         'exercicios' => array('Exercicios', '', '', '', null, array(
             'exercicio-um' => array('Exercício 01', 'exercicios/exercicioUm', 'iconHelloWorld', '', null, array())
         )
