@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mactionpanel id="mainPanel"
+                  title="Welcome to Car Collection App"
+                  close=">main/main"
+                  actions="hello-world-app.camadaModel.carCollectionModule" />
+</view>

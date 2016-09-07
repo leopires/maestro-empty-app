@@ -15,7 +15,14 @@ return array(
             'apresentacao-formulario' => array('Exemplo de Formulário', 'views/formSample', 'iconUI', '', null, array()),
         )
         ),
-        'camadaModel' => array('Camada Model', '', '', '', null, array()),
+        'camadaModel' => array('Camada Model', '', '', '', null, array(
+            'carCollectionModule' => array('Car Collection', 'carcollection/main', 'iconCar', '', null, array(
+                'brand' => array('Brand', 'carcollection/brand/main', 'iconCar', '', A_ACCESS, array()),
+                //'model' => array('Model', 'carcollection/model/main', 'carcollectionIconForm', '', A_ACCESS, array()),
+            )
+            )
+        )
+        ),
         'exercicios' => array('Exercicios', '', '', '', null, array(
             'exercicio-um' => array('Exercício 01', 'exercicios/exercicioUm', 'iconHelloWorld', '', null, array())
         )

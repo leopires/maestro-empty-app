@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <fields>
+         <mhiddenfield id="model::idModel" />        
+<mtextfield id="model::model" label="Model" />        
+<mnumberfield id="model::productionStartYear" label="ProductionStartYear" />        
+<mnumberfield id="model::productionEndYear" label="ProductionEndYear" />        
+<mlookupfieldvalue id="model::idBrandDesc"  label="Brand"  related="model::idBrand:idBrand,model::idBrandDesc:descricao" action="carcollection/brand/lookup" /><mhiddenfield id="model::idBrand" />
+    </fields>
+    <buttons>
+        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+    </buttons>
+    <validators>
+    </validators>
+</view>

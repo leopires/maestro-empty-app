@@ -1,0 +1,51 @@
+[globals]
+database = "db_car_collection"
+app = "helloworld"
+module = "carcollection"
+
+[Brand]
+table = "Brands"
+log = ""
+description = "brand"
+attributes['idBrand'] = "idBrand,integer,not null,primary,identity"
+attributes['brand'] = "brand,string,not null"
+associations['models'] = "carcollection\models\Model,oneToMany,idBrand:idBrand"
+
+[Model]
+table = "Models"
+log = ""
+description = "model"
+attributes['idModel'] = "idModel,integer,not null,primary,identity"
+attributes['model'] = "model,string,not null"
+attributes['productionStartYear'] = "productionStartYear,integer,not null"
+attributes['productionEndYear'] = "productionEndYear,integer,not null"
+attributes['idBrand'] = "idBrand,integer,not null,foreign"
+associations['brand'] = "carcollection\models\Brand,oneToOne,idBrand:idBrand"
+associations['cars'] = "carcollection\models\Car,oneToMany,idModel:idModel"
+
+[Member]
+table = "Members"
+log = ""
+description = "model"
+attributes['idMember'] = "idMember,integer,not null,primary,identity"
+attributes['firstName'] = "firstName,string,not null"
+attributes['lastName'] = "lastName,string,not null"
+attributes['email'] = "email,string, not null"
+attributes['city'] = "city,string"
+attributes['state'] = "state,string"
+attributes['idBrand'] = "idBrand,integer,not null,foreign"
+associations['cars'] = "carcollection\models\Car,oneToMany,idMember:idMember"
+
+[Car]
+table = "Cars"
+log = ""
+description = ""
+attributes['idCar'] = "idCar,integer,not null,primary,identity"
+attributes['year'] = "year,integer,not null"
+attributes['color'] = "color,string,not null"
+attributes['idModel'] = "idModel,integer,not null,foreign"
+attributes['idMember'] = "idMember,integer,not null,foreign"
+associations['owner'] = "carcollection\models\Member,oneToOne,idMember:idMember"
+associations['model'] = "carcollection\models\Model,oneToOne,idModel:idModel"
+
+
