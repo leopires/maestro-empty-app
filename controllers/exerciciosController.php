@@ -12,7 +12,7 @@ class ExerciciosController extends MController
 
     public function exercicioDois()
     {
-        $this->data->action = "@hello-world/exercicios/exercicioDoisData";
+        $this->data->action = "@helloworld/exercicios/exercicioDoisData";
         $this->render();
     }
 
@@ -25,15 +25,12 @@ class ExerciciosController extends MController
         $this->data->nome = $this->data->txtNome;
         $this->data->sobrenome = $this->data->txtSobrenome;
         $this->data->nascimento = $this->data->txtDataNascimento;
+        $this->data->cpf = $this->data->txtCPF;
+        $this->data->email = $this->data->txtEmail;
         mdump("$$");
         mdump("Ojeto data antes de ser enviado para View");
         mdump($this->data);
         mdump("$$");
         $this->render();
-    }
-
-    public function exercicioDois() {
-        $moduleMain = ">helloworld/main/main";
-        $this->renderPrompt(MPrompt::MSG_TYPE_ALERT, "Você precisa implementar.", $moduleMain);
     }
 }
