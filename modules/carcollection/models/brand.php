@@ -1,14 +1,14 @@
 <?php
 /**
- * 
+ *
  *
  * @category   Maestro
  * @package    UFJF
  * @subpackage helloworld
  * @copyright  Copyright (c) 2003-2012 UFJF (http://www.ufjf.br)
  * @license    http://siga.ufjf.br/license
- * @version    
- * @since      
+ * @version
+ * @since
  */
 
 namespace carcollection\models;
@@ -17,24 +17,22 @@ class Brand extends map\BrandMap {
 
     public static function config() {
         return array(
-            'log' => array(  ),
+            'log' => array(),
             'validators' => array(
-                'brand' => array('notnull'),
+                'brand' => array('notnull', 'notblank'),
             ),
-            'converters' => array()
+            'converters' => array(
+                'brand' => array('case' => 'upper')
+            )
         );
     }
-    
-    public function getDescription(){
+
+    public function getDescription() {
         return $this->getBrand();
     }
 
-    public function listByFilter($filter){
-        $criteria = $this->getCriteria()->select('*')->orderBy('brand');
-        if ($filter->brand){
-            $criteria->where("brand LIKE '{$filter->brand}%'");
-        }
-        return $criteria;
+    public function listByBrand($brand) {
+        return $this->getCriteria()->where("brand like '{$brand}%'")->orderBy("brand");
     }
 }
 

@@ -15,7 +15,7 @@ namespace carcollection\models\map;
 
 class BrandMap extends \MBusinessModel {
 
-    
+
     public static function ORMMap() {
 
         return array(
@@ -23,23 +23,23 @@ class BrandMap extends \MBusinessModel {
             'database' => 'db_car_collection',
             'table' => 'Brands',
             'attributes' => array(
-                'idBrand' => array('column' => 'idBrand','key' => 'primary','idgenerator' => 'identity','type' => 'integer'),
-                'brand' => array('column' => 'brand','type' => 'string'),
+                'idBrand' => array('column' => 'idBrand', 'key' => 'primary', 'idgenerator' => 'identity', 'type' => 'integer'),
+                'brand' => array('column' => 'brand', 'type' => 'string'),
             ),
             'associations' => array(
-                'models' => array('toClass' => 'carcollection\models\Model', 'cardinality' => 'oneToMany' , 'keys' => 'idBrand:idBrand'), 
+                'models' => array('toClass' => 'carcollection\models\Model', 'cardinality' => 'oneToMany', 'keys' => 'idBrand:idBrand'),
             )
         );
     }
-    
+
     /**
-     * 
-     * @var integer 
+     *
+     * @var integer
      */
     protected $idBrand;
     /**
-     * 
-     * @var string 
+     *
+     * @var string
      */
     protected $brand;
 
@@ -47,7 +47,7 @@ class BrandMap extends \MBusinessModel {
      * Associations
      */
     protected $models;
-    
+
 
     /**
      * Getters/Setters
@@ -67,16 +67,18 @@ class BrandMap extends \MBusinessModel {
     public function setBrand($value) {
         $this->brand = $value;
     }
+
     /**
      *
      * @return Association
      */
     public function getModels() {
-        if (is_null($this->models)){
+        if (is_null($this->models)) {
             $this->retrieveAssociation("models");
         }
-        return  $this->models;
+        return $this->models;
     }
+
     /**
      *
      * @param Association $value
@@ -84,6 +86,7 @@ class BrandMap extends \MBusinessModel {
     public function setModels($value) {
         $this->models = $value;
     }
+
     /**
      *
      * @return Association
@@ -92,9 +95,9 @@ class BrandMap extends \MBusinessModel {
         $this->retrieveAssociation("models");
     }
 
-    
 
 }
+
 // end - wizard
 
 ?>

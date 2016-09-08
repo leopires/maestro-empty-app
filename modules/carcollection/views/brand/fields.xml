@@ -2,11 +2,11 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <fields>
-         <mhiddenfield id="brand::idBrand" />        
-<mtextfield id="brand::brand" label="Brand" />
+        <mhiddenfield id="brand::idBrand"/>
+        <mtextfield id="brand::brand" label="Brand:" size="30"/>
     </fields>
     <buttons>
-        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+        <mbutton id="btnPost" text="Save" action="$this->data->action"/>
     </buttons>
     <validators>
     </validators>
