@@ -31,4 +31,9 @@ class ExerciciosController extends MController
         mdump("$$");
         $this->render();
     }
+
+    public function exercicioDois() {
+        $moduleMain = ">helloworld/main/main";
+        $this->renderPrompt(MPrompt::MSG_TYPE_ALERT, "Você precisa implementar.", $moduleMain);
+    }
 }
