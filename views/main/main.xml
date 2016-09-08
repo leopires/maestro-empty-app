@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
-    <mactionpanel id="mainPanel" title="Hello World App: Hello World" actions="hello-world-app.tiposHelloWorld" />
+    <mactionpanel id="pnlHelloWorld" title="Hello World" actions="hello-world-app.helloWorld" />
     <mspacer height="10px"/>
-    <mactionpanel id="mainPanelOutros" title="Hello World App: Camada Apresentação" actions="hello-world-app.camadaApresentacao" />
+    <mactionpanel id="pnlCamadaApresentacao" title="Camada Apresentação" actions="hello-world-app.camadaApresentacao" />
+    <mspacer height="10px"/>
+    <mactionpanel id="pnlExercicios" title="Exercícios" actions="hello-world-app.exercicios" />
 </view>

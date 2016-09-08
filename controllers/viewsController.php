@@ -13,6 +13,7 @@ class ViewsController extends MController {
     }
 
     public function formSample() {
+        $this->data->action = "@hello-world/views/showSubmitedFormData";
         $this->render();
     }
 

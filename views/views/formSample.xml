@@ -13,7 +13,7 @@
                 </mvcontainer>
             </fields>
             <buttons>
-                <mbutton id="btnPost" text="Enviar" action="@hello-world/views/showSubmitedFormData"/>
+                <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
             </buttons>
             <validators>
                 <mrequiredvalidator field="txtMarca" message="A marca não foi informada."/>

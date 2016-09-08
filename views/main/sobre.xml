@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mbox id="sobre" caption="Sobre" close=">helloworld/main/main">
+        <mvcontainer>
+            <mtextlabel id="txtlblDescricao" label="O que é o Hello World App?" text="$this->data->descricao"/>
+            <mspacer height="15px"/>
+            <mhcontainer>
+                <mtextlabel id="txtlblAutor" label="Autor:" text="$this->data->autor" bold="true" />
+                <mtextlabel id="txtlblContato" label="Contato:" text="$this->data->contato" bold="true" />
+            </mhcontainer>
+            <mspacer height="15px"/>
+            <mtextlabel id="txtlblVersao" label="Versão:" text="$this->data->versao" bold="true"/>
+        </mvcontainer>
+    </mbox>
+</view>
