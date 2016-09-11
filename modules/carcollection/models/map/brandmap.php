@@ -1,15 +1,4 @@
 <?php
-/**
- * @category   Maestro
- * @package    UFJF
- * @subpackage helloworld
- * @copyright  Copyright (c) 2003-2013 UFJF (http://www.ufjf.br)
- * @license    http://siga.ufjf.br/license
- * @version
- * @since
- */
-
-// wizard - code section created by Wizard Module
 
 namespace carcollection\models\map;
 
@@ -25,11 +14,11 @@ class BrandMap extends \MBusinessModel {
             'attributes' => array(
                 'idBrand' => array('column' => 'idBrand', 'key' => 'primary', 'idgenerator' => 'identity', 'type' => 'integer'),
                 'brand' => array('column' => 'brand', 'type' => 'string'),
-            ),
+                ),
             'associations' => array(
                 'models' => array('toClass' => 'carcollection\models\Model', 'cardinality' => 'oneToMany', 'keys' => 'idBrand:idBrand'),
-            )
-        );
+                )
+            );
     }
 
     /**

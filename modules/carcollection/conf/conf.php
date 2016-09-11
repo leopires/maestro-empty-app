@@ -1,6 +1,5 @@
 <?php
 
-
 return array(
     'db' => array(
         'db_car_collection' => array(
@@ -14,6 +13,6 @@ return array(
             'formatTimestamp' => '%d/%mm/%Y %T',
             'formatDateWhere' => '%Y/%m/%d',
             'formatTime' => '%T'
-        ),
-    )
-);
+            ),
+        )
+    );
