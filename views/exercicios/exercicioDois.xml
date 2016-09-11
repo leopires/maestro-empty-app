@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formExercicioDois" title="Exercício 2: Cadastro de Pessoa" close=">helloworld/main/main">
+        <fields>
+            <mvcontainer>
+                <mhcontainer>
+                    <mtextfield id="txtNome" label="Nome" width="250px"/>
+                    <mtextfield id="txtSobrenome" label="Sobrenome" width="250px"/>
+                </mhcontainer>
+                <mspacer height="10px"/>
+                <mhcontainer>
+                    <mcalendarfield id="txtDataNascimento" label="Nascimento"/>
+                    <mcpffield id="txtCPF" label="CPF" width="150px"/>
+                </mhcontainer>
+                <mspacer height="10px"/>
+                <memailfield id="txtEmail" label="E-Mail" width="200px"/>
+            </mvcontainer>
+        </fields>
+        <buttons>
+            <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+        </buttons>
+        <validators>
+            <mrequiredvalidator field="txtNome" message="O nome não foi informado."/>
+            <mrequiredvalidator field="txtSobrenome" message="O sobrenome não foi informado."/>
+            <mrequiredvalidator field="txtCPF" message="O CPF não foi informada."/>
+        </validators>
+    </mform>
+</view>

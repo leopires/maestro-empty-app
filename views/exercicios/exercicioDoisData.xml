@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mbox id="exercicioDoisData" caption="Dados Pessoais" close=">helloworld/exercicios/exercicioDois">
+        <mvcontainer>
+            <mhcontainer>
+                <mtextlabel id="txtNome" label="Nome:" text="$this->data->nome" />
+                <mtextlabel id="txtSobrenome" label="Sobrenome:" text="$this->data->sobrenome" />
+            </mhcontainer>
+            <mspacer height="15px"/>
+            <mhcontainer>
+                <mtextlabel id="txtNascimento" label="Nascimento:" text="$this->data->nascimento" />
+                <mtextlabel id="txtCPF" label="CPF:" text="$this->data->cpf" />
+            </mhcontainer>
+            <mspacer height="15px"/>
+            <mtextlabel id="txtEmail" label="E-Mail:" text="$this->data->email" />
+        </mvcontainer>
+    </mbox>
+
+</view>
