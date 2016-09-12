@@ -1,5 +1,7 @@
 <?php
 
+// chave => array("Label", "action", "Imagem/Icone", "TRANSACAO", array(SUBITENS))
+
 return array(
     'hello-world-app' => array('main', '', '', '', null, array(
         'helloWorld' => array('Hello World', '', '', '', null, array(
