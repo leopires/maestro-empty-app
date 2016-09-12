@@ -17,8 +17,10 @@ return array(
         ),
         'camadaModel' => array('Camada Model', '', '', '', null, array(
             'carCollectionModule' => array('Car Collection', 'carcollection/main', 'iconCar', '', null, array(
-                'brand' => array('Brand', 'carcollection/brand/main', 'iconCar', '', A_ACCESS, array()),
-                //'model' => array('Model', 'carcollection/model/main', 'carcollectionIconForm', '', A_ACCESS, array()),
+                'brand' => array('Brand', 'carcollection/brand/main', 'iconCar', '', null, array()),
+                'model' => array('Model', 'carcollection/model/main', 'iconCar', '', null, array()),
+                'car' => array('Car', 'carcollection/car/main', 'iconCar', '', null, array()),
+                'member' => array('Club Member', 'carcollection/member/main', 'iconCar', '', null, array()),
                 )
             )
             )

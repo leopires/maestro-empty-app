@@ -9,11 +9,11 @@ class Brand extends map\BrandMap {
             'log' => array(),
             'validators' => array(
                 'brand' => array('notnull', 'notblank'),
-                ),
+            ),
             'converters' => array(
                 'brand' => array('case' => 'upper')
-                )
-            );
+            )
+        );
     }
 
     public function getDescription() {

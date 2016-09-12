@@ -3,7 +3,7 @@
 <view>
     <mform id="formObject" close=">carcollection/model/formFind" base="formBase">
         <property title="$this->data->model->description" />
-        <action action="{{ 'formUpdate/' . $this->data->id }}" label="Editar" />
-        <action action="{{ 'formDelete/' . $this->data->id }}" label="Excluir" />
+        <action action="{{ 'formUpdate/' . $this->data->id }}" label="Edit" />
+        <action action="{{ 'formDelete/' . $this->data->id }}" label="Delete" />
     </mform>
 </view>

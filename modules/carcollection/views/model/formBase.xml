@@ -2,7 +2,7 @@
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
 <view>
     <mform id="formBase" title="Model" close=">carcollection/main">
-        <action action="formFind" label="Pesquisar" />
-        <action action="formNew" label="Inserir Novo" />
+        <action action="formFind" label="Search" />
+        <action action="formNew" label="New" />
     </mform>
 </view>

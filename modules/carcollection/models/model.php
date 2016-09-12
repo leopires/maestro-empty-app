@@ -1,15 +1,4 @@
 <?php
-/**
- * 
- *
- * @category   Maestro
- * @package    UFJF
- * @subpackage helloworld
- * @copyright  Copyright (c) 2003-2012 UFJF (http://www.ufjf.br)
- * @license    http://siga.ufjf.br/license
- * @version    
- * @since      
- */
 
 namespace carcollection\models;
 
@@ -17,28 +6,43 @@ class Model extends map\ModelMap {
 
     public static function config() {
         return array(
-            'log' => array(  ),
+            'log' => array(),
             'validators' => array(
-                'model' => array('notnull'),
-                'productionStartYear' => array('notnull'),
-                'productionEndYear' => array('notnull'),
-                'idBrand' => array('notnull'),
+                'model' => array('notnull', 'notblank'),
+                'productionStartYear' => array('notnull', 'notblank'),
+                'idBrand' => array('notnull', 'notblank'),
             ),
-            'converters' => array()
+            'converters' => array(
+                'model' => array('case' => 'upper')
+            )
         );
     }
-    
-    public function getDescription(){
-        return $this->getModel();
+
+    public function getDescription() {
+
+        return $this->getBrand()->getBrand() . " - " . $this->getModel();
+
     }
 
-    public function listByFilter($filter){
-        $criteria = $this->getCriteria()->select('*')->orderBy('model');
-        if ($filter->model){
+    public function listByFilter($filter) {
+        $criteria = $this->getCriteria()
+            ->select('idModel')
+            ->select('model')
+            ->select('brand.brand')
+            ->select('productionStartYear')
+            ->select('productionEndYear')
+            ->orderBy('model');
+        if ($filter->model) {
             $criteria->where("model LIKE '{$filter->model}%'");
         }
         return $criteria;
     }
+
+    public function isInProduction() {
+        if (!$this->getProductionEndYear())
+            return true;
+    }
+
 }
 
 ?>

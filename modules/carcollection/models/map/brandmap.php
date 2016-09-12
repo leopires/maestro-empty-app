@@ -14,33 +14,21 @@ class BrandMap extends \MBusinessModel {
             'attributes' => array(
                 'idBrand' => array('column' => 'idBrand', 'key' => 'primary', 'idgenerator' => 'identity', 'type' => 'integer'),
                 'brand' => array('column' => 'brand', 'type' => 'string'),
-                ),
+            ),
             'associations' => array(
                 'models' => array('toClass' => 'carcollection\models\Model', 'cardinality' => 'oneToMany', 'keys' => 'idBrand:idBrand'),
-                )
-            );
+            )
+        );
     }
 
-    /**
-     *
-     * @var integer
-     */
+
     protected $idBrand;
-    /**
-     *
-     * @var string
-     */
+
     protected $brand;
 
-    /**
-     * Associations
-     */
     protected $models;
 
 
-    /**
-     * Getters/Setters
-     */
     public function getIdBrand() {
         return $this->idBrand;
     }
@@ -57,10 +45,6 @@ class BrandMap extends \MBusinessModel {
         $this->brand = $value;
     }
 
-    /**
-     *
-     * @return Association
-     */
     public function getModels() {
         if (is_null($this->models)) {
             $this->retrieveAssociation("models");
@@ -68,25 +52,15 @@ class BrandMap extends \MBusinessModel {
         return $this->models;
     }
 
-    /**
-     *
-     * @param Association $value
-     */
     public function setModels($value) {
         $this->models = $value;
     }
 
-    /**
-     *
-     * @return Association
-     */
     public function getAssociationModels() {
         $this->retrieveAssociation("models");
     }
 
 
 }
-
-// end - wizard
 
 ?>

@@ -104,4 +104,14 @@ class BrandController extends MController {
         }
     }
 
+    public function lookup() {
+        try {
+            $brand = filter_var($this->data->brand, FILTER_SANITIZE_STRING);
+            $this->data->query = Brand::create()->listByBrand($brand);
+            $this->render();
+        } catch (Exception $ex) {
+            $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to open Brands lookup.");
+        }
+    }
+
 }

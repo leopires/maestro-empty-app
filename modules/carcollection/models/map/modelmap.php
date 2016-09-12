@@ -1,15 +1,4 @@
 <?php
-/**
- * @category   Maestro
- * @package    UFJF
- * @subpackage helloworld
- * @copyright  Copyright (c) 2003-2013 UFJF (http://www.ufjf.br)
- * @license    http://siga.ufjf.br/license
- * @version
- * @since
- */
-
-// wizard - code section created by Wizard Module
 
 namespace carcollection\models\map;
 
@@ -35,36 +24,25 @@ class ModelMap extends \MBusinessModel {
             )
         );
     }
-    
+
     /**
-     * 
-     * @var integer 
+     * Atributos da classe Model
      */
+
     protected $idModel;
-    /**
-     * 
-     * @var string 
-     */
+
     protected $model;
-    /**
-     * 
-     * @var integer 
-     */
+
     protected $productionStartYear;
-    /**
-     * 
-     * @var integer 
-     */
+
     protected $productionEndYear;
-    /**
-     * 
-     * @var integer 
-     */
+
     protected $idBrand;
 
     /**
-     * Associations
+     * Atributos da classe Model que referenciam associações.
      */
+
     protected $brand;
     protected $cars;
     
@@ -72,6 +50,7 @@ class ModelMap extends \MBusinessModel {
     /**
      * Getters/Setters
      */
+
     public function getIdModel() {
         return $this->idModel;
     }
@@ -111,6 +90,7 @@ class ModelMap extends \MBusinessModel {
     public function setIdBrand($value) {
         $this->idBrand = $value;
     }
+
     /**
      *
      * @return Association
@@ -121,6 +101,7 @@ class ModelMap extends \MBusinessModel {
         }
         return  $this->brand;
     }
+
     /**
      *
      * @param Association $value
@@ -128,6 +109,7 @@ class ModelMap extends \MBusinessModel {
     public function setBrand($value) {
         $this->brand = $value;
     }
+
     /**
      *
      * @return Association
@@ -135,6 +117,7 @@ class ModelMap extends \MBusinessModel {
     public function getAssociationBrand() {
         $this->retrieveAssociation("brand");
     }
+
     /**
      *
      * @return Association
@@ -145,6 +128,7 @@ class ModelMap extends \MBusinessModel {
         }
         return  $this->cars;
     }
+
     /**
      *
      * @param Association $value
@@ -152,6 +136,7 @@ class ModelMap extends \MBusinessModel {
     public function setCars($value) {
         $this->cars = $value;
     }
+
     /**
      *
      * @return Association
@@ -163,6 +148,5 @@ class ModelMap extends \MBusinessModel {
     
 
 }
-// end - wizard
 
 ?>

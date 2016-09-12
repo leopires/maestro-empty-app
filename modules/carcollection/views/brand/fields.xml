@@ -9,5 +9,6 @@
         <mbutton id="btnPost" text="Save" action="$this->data->action"/>
     </buttons>
     <validators>
+        <mrequiredvalidator field="model::lkpBrand" message="The Brand was not informed."/>
     </validators>
 </view>
