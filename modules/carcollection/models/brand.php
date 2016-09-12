@@ -18,6 +18,11 @@ class Brand extends map\BrandMap {
 
     public function getDescription() {
         return $this->getBrand();
+
+    }
+
+    public function listAllBrands() {
+        return $this->getCriteria()->orderBy('brand');
     }
 
     public function listByBrand($brand) {

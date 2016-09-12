@@ -1,6 +1,7 @@
 <?php
 
 use carcollection\models\Model as Model;
+use carcollection\models\Brand as Brand;
 
 class ModelController extends MController {
 
@@ -19,12 +20,15 @@ class ModelController extends MController {
 
         // Limpando o valor que vem do $this->data para evitar SQL Injection.
         $modelDescription = filter_var($this->data->model, FILTER_SANITIZE_STRING);
+        $brand = filter_var($this->data->brand, FILTER_SANITIZE_STRING);
         // Montando um objeto plano.
         $filter = new stdClass();
         // Criando uma propriedade e setando valor para ela neste objeto plano, criado anteriormente..
         $filter->model = $modelDescription;
+        $filter->brand = $brand;
 
         try {
+            $this->data->brands = Brand::create()->listAllBrands()->asQuery()->chunkResult();
             // Executando a busca no banco de dados e preenchendo a variável para a view.
             $this->data->query = Model::create()->listByFilter($filter)->asQuery();
             // Chamando a view: formfind.xml

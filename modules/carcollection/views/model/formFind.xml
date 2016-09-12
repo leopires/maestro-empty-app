@@ -5,6 +5,7 @@
         <fields>
             <mhcontainer>
                 <mtextfield id="model" label="Model:" value="$this->data->model" size="30" />
+                <mselection id="brand" label="Brand:" options="$this->data->brands" width="180px"/>
                 <mbuttonfind/>
             </mhcontainer>
             <mspacer height="10px"/>

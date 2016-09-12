@@ -35,6 +35,9 @@ class Model extends map\ModelMap {
         if ($filter->model) {
             $criteria->where("model LIKE '{$filter->model}%'");
         }
+        if ($filter->brand) {
+            $criteria->where("idBrand = {$filter->brand}");
+        }
         return $criteria;
     }
 
