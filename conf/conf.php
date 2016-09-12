@@ -2,6 +2,11 @@
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Hello World App',
+    'import' => array(
+        'modules' => array(
+            'carcollection'
+        )
+    ),
     'login' => array(
         'check' => false
     ),

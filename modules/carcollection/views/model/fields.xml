@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <fields>
+        <mhiddenfield id="model::idModel"/>
+        <mhiddenfield id="model::idBrand"/>
+        <mlookupfieldvalue id="model::lkpBrand" label="Brand"
+                           related="model::idBrand:idBrand,model::lkpBrand:brand"
+                           action="carcollection/brand/lookup" width="333px"/>
+        <mspacer height="10px"/>
+        <mtextfield id="model::model" label="Model" maxLength="120" width="350px"/>
+        <mspacer height="10px"/>
+        <mbasegroup id="grpProduction" caption="Production" width="150px">
+            <mhcontainer>
+                <mtextfield id="model::productionStartYear" label="Start Year" width="50px" maxLength="4" />
+                <mtextfield id="model::productionEndYear" label="End Year" width="50px" maxLength="4" />
+            </mhcontainer>
+        </mbasegroup>
+    </fields>
+    <buttons>
+        <mbutton id="btnPost" text="Enviar" action="$this->data->action"/>
+    </buttons>
+    <validators>
+        <mrequiredvalidator field="model::model" message="The Model description was not informed."/>
+        <mrequiredvalidator field="model::productionStartYear" message="The model start year of the production was not informed."/>
+    </validators>
+</view>

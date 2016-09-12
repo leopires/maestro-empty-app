@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform title="Brand Search" close="close" enterAction="submit">
+        <fields>
+            <mhcontainer>
+                <mtextfield id="brand" label="Brand" width="250px" />
+                <mbuttonfind />
+            </mhcontainer>
+            <mspacer height="10px"/>
+            <mdatagrid id="lkpBrands" query="$this->data->query" pageLength="20">
+                <mdatagridcolumn field="idBrand" visible="false"/>
+                <mdatagridhyperlink field="brand" title="brand" width="100%"/>
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>

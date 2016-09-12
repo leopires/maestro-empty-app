@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<view>
+    <mform id="formFind" title="Model Search" close=">carcollection/main" base="formBase">
+        <fields>
+            <mhcontainer>
+                <mtextfield id="model" label="Model:" value="$this->data->model" size="30" />
+                <mbuttonfind/>
+            </mhcontainer>
+            <mspacer height="10px"/>
+            <mdatagrid id="gridFind" query="$this->data->query" pageLength="20">
+                <mdatagridcolumn field="idModel" visible="false"/>
+                <mdatagridhyperlink field="model" action=">carcollection/model/formObject/#0#" title="Model" width="40%"/>
+                <mdatagridcolumn field="brand" title="Brand" width="30%" />
+                <mdatagridcolumn field="productionStartYear" title="Production Start Year" width="15%" />
+                <mdatagridcolumn field="productionEndYear" title="Production End Year" width="15%" />
+            </mdatagrid>
+        </fields>
+    </mform>
+</view>
