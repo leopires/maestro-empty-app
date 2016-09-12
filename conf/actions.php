@@ -1,6 +1,9 @@
 <?php
 
-// chave => array("Label", "action", "Imagem/Icone", "TRANSACAO", array(SUBITENS))
+// chave => array("Label", "action", "Imagem/Icone", "TRANSACAO", DIREITO_ACESSO , array(SUBITENS))
+
+// Manager::getAction("hello-world-app.helloWorld.hello-world-html")
+// Manager::getActions("hello-world-app.helloWorld")
 
 return array(
     'hello-world-app' => array('main', '', '', '', null, array(
