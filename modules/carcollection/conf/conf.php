@@ -4,7 +4,7 @@ return array(
     'db' => array(
         'db_car_collection' => array(
             'driver' => 'pdo_mysql',
-            'host' => 'cursomaestro.ufjf.br',
+            'host' => '10.40.40.21',
             'dbname' => 'db_car_collection',
             'user' => 'root',
             'password' => '654321',
