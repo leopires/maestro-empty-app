@@ -9,7 +9,7 @@
                 <mtextfield id="member::lastName" label="Last Name" width="250px" maxLength="50"/>
             </mhcontainer>
             <mspacer height="10px"/>
-            <mtextfield id="member::email" label="E-Mail" width="350px" maxLength="120"/>
+            <memailfield id="member::email" label="E-Mail:" width="350pxpx" maxLength="120"/>
             <mspacer height="10px"/>
             <mbasegroup id="grpLocation" caption="Location" width="550px">
                 <mhcontainer>
@@ -23,10 +23,8 @@
         <mbutton id="btnSave" text="Save" action="$this->data->actionSave"/>
     </buttons>
     <validators>
-        <!--
         <mrequiredvalidator field="member::firstName" message="First name of the club member was not informed."/>
         <mrequiredvalidator field="member::lastName" message="Last name of the club member was not informed."/>
         <mrequiredvalidator field="member::email" message="E-mail of the club member was not informed."/>
-        -->
     </validators>
 </view>

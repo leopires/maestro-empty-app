@@ -10,7 +10,6 @@ class MemberController extends \MController {
 
     /**
      * Action URL: helloworld/carcollection/member/main
-     * Redireciona para a action formFind.
      */
     public function main() {
         // Redireciona para a action formFind.
@@ -18,7 +17,8 @@ class MemberController extends \MController {
     }
 
     /**
-     * Action que exibe o formulário de listagem e pesquisa de Membros.
+     * Exibe o formulário de listagem e pesquisa de Membros.
+     * Action URL: helloworld/carcollection/member/formFind
      */
     public function formFind() {
 
@@ -27,14 +27,31 @@ class MemberController extends \MController {
             $email = trim($this->data->txtEMail);
             $this->data->members = Member::create()->listByFirstNameOrEMailOrderByFirstNameAsc($firstName, $email)->asQuery();
             $this->render();
-        }catch (Exception $ex) {
+        } catch (Exception $ex) {
             $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to list the Members.", self::MODULE_MAIN);
         }
     }
 
+    /**
+     * Exibe o formulário de cadastro de novos Membros.
+     * Action URL: helloworld/carcollection/member/formNew
+     */
     public function formNew() {
         $this->data->actionSave = self::ACTION_SAVE;
         $this->render();
+    }
+
+    public function formObject() {
+        try {
+            $member = Member::create($this->data->id);
+            if (!$member->isPersistent()) {
+                $this->redirect(Manager::getURL(self::ACTION_FORM_FIND));
+            } else {
+                $this->render();
+            }
+        } catch (\Exception $ex) {
+            $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to load Member data.", self::ACTION_FORM_FIND);
+        }
     }
 
     /**

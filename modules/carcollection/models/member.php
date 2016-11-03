@@ -17,7 +17,17 @@ class Member extends map\MemberMap {
                 'lastName' => array('notnull', 'notblank'),
                 'email' => array('notnull', 'notblank'),
             ),
-            'converters' => array()
+            'fieldDescription' => array(
+                'firstName' => 'O primeiro nome do Membro',
+                'lastName' => 'O último nome do Membro ',
+                'email' => 'O e-mail do Membro'
+            ),
+            'converters' => array(
+                'firstName' => array('case' => 'upper'),
+                'lastName' => array('case' => 'upper'),
+                'city' => array('case' => 'upper'),
+                'state' => array('case' => 'upper')
+            )
         );
     }
 

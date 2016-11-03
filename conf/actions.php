@@ -1,6 +1,13 @@
 <?php
 
-// chave => array("Label", "action", "Imagem/Icone", "TRANSACAO", DIREITO_ACESSO , array(SUBITENS))
+/**
+ * Funcionamento:
+ *
+ * chave => array("Label", "action", "Imagem/Icone", "TRANSACAO", DIREITO_ACESSO , array(SUBITENS))
+ *
+ * Para saber mais informações a respeito do arquivo de Actions:
+ * Ver: http://[instalacao-maestro]/index.php/guia/controller/actionsfile
+ */
 
 return array(
     'hello-world-app' => array('main', '', '', '', null, array(

@@ -5,7 +5,7 @@ use carcollection\models\Brand as Brand;
 class BrandController extends MController {
 
     const ACTION_MODULE_MAIN = ">carcollection/main";
-    const ACTION_FORM_OBJECT = ">carcollection/brand/formObject";
+    const ACTION_FORM_OBJECT = ">carcollection/brand/formObject/";
     const ACTION_FORM_FIND = ">carcollection/brand/formFind";
     const ACTION_SAVE = "@carcollection/brand/save";
     const ACTION_DELETE = "@carcollection/brand/delete/";

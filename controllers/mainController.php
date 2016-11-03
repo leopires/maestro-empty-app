@@ -12,6 +12,6 @@ class MainController extends MController {
         $this->data->contato = Manager::getConf("sobre.contato");
         $this->data->contato = Manager::getConf("sobre.contato");
         $this->data->versao = Manager::getConf("sobre.versao");
-        $this->render("sobre");
+        $this->render("sobre/sobre");
     }
 }
