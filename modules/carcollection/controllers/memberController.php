@@ -7,6 +7,8 @@ class MemberController extends \MController {
     const MODULE_MAIN = ">carcollection/main";
     const ACTION_FORM_FIND = ">carcollection/member/formFind";
     const ACTION_SAVE = "@carcollection/member/save/";
+    const ACTION_DELETE = "@carcollection/member/delete/";
+    const ACTION_OBJECT = ">carcollection/member/formObject/";
 
     /**
      * Action URL: helloworld/carcollection/member/main
@@ -21,11 +23,11 @@ class MemberController extends \MController {
      * Action URL: helloworld/carcollection/member/formFind
      */
     public function formFind() {
-
         try {
             $firstName = trim($this->data->txtFirstName);
             $email = trim($this->data->txtEMail);
             $this->data->members = Member::create()->listByFirstNameOrEMailOrderByFirstNameAsc($firstName, $email)->asQuery();
+            // Carrega: views/member/formFind.xml
             $this->render();
         } catch (Exception $ex) {
             $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to list the Members.", self::MODULE_MAIN);
@@ -38,19 +40,83 @@ class MemberController extends \MController {
      */
     public function formNew() {
         $this->data->actionSave = self::ACTION_SAVE;
+        // Carrega? views/member/formnew.xml
         $this->render();
     }
 
+    /**
+     * Exibe as ações que podem ser tomadas com determinada instância do objeto Membro.
+     * As ações são: Edit e Delete.
+     */
     public function formObject() {
         try {
             $member = Member::create($this->data->id);
             if (!$member->isPersistent()) {
                 $this->redirect(Manager::getURL(self::ACTION_FORM_FIND));
             } else {
+                $this->data->member = $member->getData();
+                // Carrega: views/member/formObject.xml
                 $this->render();
             }
         } catch (\Exception $ex) {
             $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to load Member data.", self::ACTION_FORM_FIND);
+        }
+    }
+
+    /**
+     * Exibe o formulário para alteração dos dados cadastrados.
+     */
+    public function formUpdate() {
+        try {
+            $member = Member::create($this->data->id);
+            if (!$member->isPersistent()) {
+                $this->redirect(Manager::getURL(self::ACTION_FORM_FIND));
+            } else {
+                $this->data->member = $member->getData();
+                $this->data->actionSave = self::ACTION_SAVE . $member->getIdMember();
+                // Carrega: views/member/formUpdate.xml
+                $this->render();
+            }
+        } catch (\Exception $ex) {
+            $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to load Member data.", self::ACTION_FORM_FIND);
+        }
+    }
+
+    /**
+     * Solicita a confirmação do usuário do sistema quanto à exclusão do Membro.
+     */
+    public function formDelete() {
+        $member = null;
+        try {
+            $member = Member::create($this->data->id);
+            if (!$member->isPersistent()) {
+                $this->redirect(Manager::getURL(self::ACTION_FORM_FIND));
+            } else {
+                // Monta as actions para realizar a exclusão ou cancelar a operação.
+                $yesAction = self::ACTION_DELETE . $member->getIdMember();
+                $noAction = self::ACTION_OBJECT . $member->getIdMember();
+                // Solicita a confirmação do usuário.
+                $this->renderPrompt(MPrompt::MSG_TYPE_CONFIRMATION,
+                    "Are you sure about to delete the Member: {$member->getDescription()}?",
+                    $yesAction, $noAction);
+            }
+        } catch (Exception $ex) {
+            $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "An error occurs while trying to retrieve Member data.", self::ACTION_FORM_FIND);
+        }
+    }
+
+    public function delete() {
+        $member = null;
+        try {
+            $member = Member::create($this->data->id);
+            if (!$member->isPersistent()) {
+                $this->redirect(Manager::getURL(self::ACTION_FORM_FIND));
+            } else {
+                $member->delete();
+                $this->renderPrompt(MPrompt::MSG_TYPE_INFORMATION, "Member deleted with success!", self::ACTION_FORM_FIND);
+            }
+        } catch (Exception $ex) {
+            $this->renderPrompt(MPrompt::MSG_TYPE_ERROR, "Cannot delete Member due to an error.", self::ACTION_FORM_FIND);
         }
     }
 
@@ -69,7 +135,7 @@ class MemberController extends \MController {
             $member->setData($this->data->member);
             // Solicita que os dados sejam persistidos.
             $member->save();
-            // Informa ao usu[ario que a operação ocorreu com sucesso.
+            // Informa ao usuário que a operação ocorreu com sucesso.
             // Os parâmetros do renderPrompt são:
             // 1 - Tipo da mensagem: dependendo do tipo, as cores e até mesmo o ícone da box renderizada mudam.
             // 2 - Mensagem a ser exibida na box.

@@ -4,7 +4,6 @@ namespace carcollection\models;
 
 /**
  * Classe de modelo que representa os objetos de domínio do tipo Member.
- * Class Member
  * @package carcollection\models
  */
 class Member extends map\MemberMap {

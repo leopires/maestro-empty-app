@@ -4,10 +4,10 @@ return array(
     'db' => array(
         'db_car_collection' => array(
             'driver' => 'pdo_mysql',
-            'host' => 'localhost',
+            'host' => 'cursomaestro.ufjf.br',
             'dbname' => 'db_car_collection',
             'user' => 'root',
-            'password' => 'root',
+            'password' => '123456',
             'charset' => 'UTF8',
             'formatDate' => '%d/%m/%Y %T',
             'formatTimestamp' => '%d/%mm/%Y %T',

@@ -1,19 +1,23 @@
 <?xml version="1.0"?>
 <!DOCTYPE view SYSTEM "../../../../public/layouts/view.dtd">
+<!-- Todo arquivo de View tem que iniciar com as tag <view> -->
 <view>
+    <!-- Todo campo de formulário que envia dados deve estar entre as tags <mform></mform> -->
     <mform id="formFind" title="Members Search" base="formBase">
         <fields>
             <mhcontainer>
-                <mtextfield id="txtFirstName" label="First Name:" value="$this->data->txtFirstName" size="30" />
+                <mtextfield id="txtFirstName" label="First Name:" value="$this->data->txtFirstName" size="20"/>
+                <mtextfield id="txtEmail" label="E-Mail:" value="$this->data->txtEmail" size="25"/>
                 <mbuttonfind/>
             </mhcontainer>
             <mspacer height="10px"/>
             <mdatagrid id="gridFind" query="$this->data->members" pageLength="15">
                 <mdatagridcolumn field="idMeber" visible="false"/>
-                <mdatagridhyperlink field="firstName" action=">carcollection/member/formObject/#0#" title="First Name" width="30%"/>
-                <mdatagridcolumn field="lastName" title="Last Name" width="30%" />
-                <mdatagridcolumn field="email" title="E-Mail" width="30%" />
-                <mdatagridcolumn field="city" title="City" width="10%" />
+                <mdatagridhyperlink field="firstName" action=">carcollection/member/formObject/#0#" title="First Name"
+                                    width="30%"/>
+                <mdatagridcolumn field="lastName" title="Last Name" width="30%"/>
+                <mdatagridcolumn field="email" title="E-Mail" width="30%"/>
+                <mdatagridcolumn field="city" title="City" width="10%"/>
             </mdatagrid>
         </fields>
     </mform>
