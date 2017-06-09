@@ -9,6 +9,16 @@ class ViewsController extends MController {
     }
 
     public function viewFromXMLFile() {
+
+        for ($i = 2000; $i < 2051; $i++) {
+            $options["'$i'"] = "Ano de " . $i;
+        }
+
+        $this->data->anos = $options;
+        mdump("Opções:");
+        mdump($this->data->anos);
+        $this->data->anoSelecionado = "'2034'";
+        mdump("Selecionado: " . $this->data->anoSelecionado);
         $this->render();
     }
 

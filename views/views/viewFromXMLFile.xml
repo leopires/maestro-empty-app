@@ -5,7 +5,8 @@
         <mvcontainer>
             <mtextlabel id="txtlblMarca" label="Marca:" text="Ferrari" bold="true"/>
             <mtextlabel id="txtlblModelo" label="Modelo:" text="360 Modela" bold="true"/>
-            <mtextlabel id="txtlblAno" label="Ano:" text="1999 / 2000" bold="true"/>
+            <!--<mtextlabel id="txtlblAno" label="Ano:" text="1999 / 2000" bold="true"/> -->
+            <mselection id="selAnoModelo" label="Ano:" options="$this->data->anos" value="$this->data->anoSelecionado" />
         </mvcontainer>
     </mbox>
 </view>
